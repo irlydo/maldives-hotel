@@ -1,0 +1,366 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.reply {
+  width: 20rem;
+}
+button {
+  cursor: pointer;
+}
+
+.login-form {
+  display: grid;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.email {
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+}
+.background-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  color: white;
+  z-index: 500;
+  background-color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .logo, .header-text, nav {
+    width: 100%; 
+    text-align: center; 
+    padding: 10px 0; 
+  }
+
+  nav {
+    position: relative;
+    justify-content: center; 
+  }
+}
+
+.make-space {
+  height: 100vh;
+}
+
+.admin-messages {
+  padding-left: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  padding-bottom: 20px;
+}
+
+.contact-form > h1 {
+  font-size: 40px;
+}
+
+.contact-form > input,
+.contact-form > textarea,
+.contact-form > button {
+  width: 20rem;
+  font-size: 25px;
+}
+
+.fa-trash-can {
+  color: rgb(99, 0, 0);
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.admin-text {
+  padding: 1rem;
+}
+
+.admin-divider {
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  margin-top: 5px;
+}
+
+.header-text {
+  border-radius: 5px;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+  margin: 20px;
+  text-shadow: 2px 2px #5a5a5ad7;
+}
+
+main {
+  background-color: white;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-h1 {
+  padding: 20px;
+  font-size: 2.2rem;
+}
+
+.about-p {
+  font-size: 1.6rem;
+}
+
+.features {
+  font-size: 1.4rem;
+  padding-bottom: 2rem;
+}
+
+#about {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.features {
+  list-style: none;
+  text-align: left;
+}
+
+.logo {
+  width: 5rem;
+  padding-left: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-grow: 1;
+  position: fixed;
+  padding: 20px;
+  font-size: 25px;
+  justify-content: right;
+  justify-self: right;
+  right: 0%;
+}
+
+.nav-button {
+
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .header-text {
+    margin-right: 2rem;
+  }
+
+  nav {
+    position: relative;
+    padding-right: 1rem;
+  }
+
+  .nav-button {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-button {
+    position: static;
+    margin: 0.5rem;
+  }
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.maldives {
+  font-weight: 100;
+}
+
+hr {
+  height: 10px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.book {
+  background-image: url("./assets/mohamed-thasneem-3bAblStd-IY-unsplash.jpg");
+}
+
+.gallery-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery-text {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 10px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: none;
+  max-height: 90vh;
+  object-fit: contain; 
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  color: #f1f1f1;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+body {
+  margin: 0px;
+}
+
+#container {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 80pt;
+  color: white;
+  text-align: center;
+
+  user-select: none;
+}
