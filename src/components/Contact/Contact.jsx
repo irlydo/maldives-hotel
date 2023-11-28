@@ -49,6 +49,7 @@ export default function Contact() {
             <form className='contact-form' onSubmit={submitEvent}>
             <h1>Contact us</h1>
                 <input 
+                    className='contact-input'
                     type='text' 
                     name='name'
                     placeholder="Name" 
@@ -56,6 +57,7 @@ export default function Contact() {
                     onChange={handleChange}
                 />
                 <input 
+                                    className='contact-input'
                     type='text' 
                     name='email'
                     placeholder="Email" 
@@ -63,6 +65,7 @@ export default function Contact() {
                     onChange={handleChange}
                 />
                 <textarea 
+                                    className='contact-input'
                     name='message'
                     placeholder="Message" 
                     value={formData.message} 
