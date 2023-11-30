@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
 import { useState } from "react";
+import "./admin.css"
 
 export default function Admin() {
   const [formData, setFormData] = useState({
