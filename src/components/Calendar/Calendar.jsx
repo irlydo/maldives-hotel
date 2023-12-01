@@ -62,7 +62,9 @@ const Calendar = () => {
       return;
     }
     setErrorMessage("");
-
+    const totalCost = calculateTotalCost();
+    localStorage.setItem("totalCost", totalCost);
+  
     localStorage.setItem(
       "selectedDates",
       JSON.stringify({ startDate, endDate })

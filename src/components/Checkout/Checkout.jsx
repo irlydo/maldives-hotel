@@ -4,19 +4,28 @@ import moment from "moment";
 
 import "./Checkout.css";
 const Checkout = () => {
+  const navigate = useNavigate();
   const [selectedDates, setSelectedDates] = useState({
     startDate: "",
     endDate: "",
   });
-  const navigate = useNavigate();
+
+  const [totalCost, setTotalCost] = useState("");
+
   useEffect(() => {
     const dates = JSON.parse(localStorage.getItem("selectedDates"));
+    const cost = localStorage.getItem("totalCost");
+
     if (dates) {
       setSelectedDates({
         startDate: moment(dates.startDate).format("MMMM Do YYYY"),
         endDate: moment(dates.endDate).format("MMMM Do YYYY"),
       });
     }
+    if (cost) {
+      setTotalCost(cost);
+    }
+
   }, []);
 
   const handleSubmit = (e) => {
@@ -27,29 +36,29 @@ const Checkout = () => {
     localStorage.setItem("reservedDates", JSON.stringify(reservedDates));
 
     const formData = new FormData(e.target);
+    localStorage.setItem("email", formData.get("email"));
     const userData = {
       name: formData.get("name"),
       email: formData.get("email"),
-      cardInfo: formData.get("cardInfo"),
-      expiry: formData.get("expiry"),
-      cvv: formData.get("cvv"),
       reservedDates: selectedDates,
+      totalCost: totalCost,
     };
-    fetch('http://localhost:3000/bookings', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
+
+    fetch("http://localhost:3000/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
     })
-    .then(response => response.json())
-    .then(data => {
-        navigate('/thankyou');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-};
+      .then((response) => response.json())
+      .then((data) => {
+        navigate("/thankyou");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   return (
     <div className="checkout-container">
@@ -81,6 +90,9 @@ const Checkout = () => {
         <div className="form-group">
           <label htmlFor="cardInfo">CVV:</label>
           <input type="password" id="cardInfo" name="cardInfo" required />
+        </div>
+        <div className="total-cost">
+          <b>Total Price: £{totalCost}</b>
         </div>
         <button type="submit" className="submit-button">
           Complete Reservation

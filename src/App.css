@@ -320,6 +320,12 @@ hr {
   object-fit: contain;
 }
 
+.total-cost {
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+
 .close {
   position: absolute;
   top: 20px;
