@@ -352,6 +352,11 @@ hr {
   right: 0;
 }
 
+.booked-day {
+  text-decoration: line-through;
+  color: #ccc; /* Grayed out */
+}
+
 .prev:hover,
 .next:hover {
   color: #f1f1f1;

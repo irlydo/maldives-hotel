@@ -37,3 +37,15 @@
     background-color: #328535;
   }
   
+  .login-h1 {
+    margin-bottom: 1rem;
+    text-decoration: underline;
+  }
+
+  .adminpanel-h1 {
+    padding-left: 1rem;
+  }
+
+  .admin-booking > p {
+    padding-left: 1rem;
+  }

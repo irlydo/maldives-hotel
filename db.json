@@ -1,19 +1,31 @@
 {
-  "posts": [
+  "messages": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Daniel Roberts",
+      "email": "fokum8@gmail.com",
+      "message": "adadwddawd",
+      "id": 1
     }
   ],
-  "comments": [
+  "bookings": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Daniel Roberts",
+      "email": "fokum8@gmail.com",
+      "cardInfo": "3252",
+      "expiry": "2352",
+      "cvv": null,
+      "reservedDates": {
+        "startDate": "December 21st 2023",
+        "endDate": "December 28th 2023"
+      },
+      "id": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "dates": [
+    {
+      "startDate": "2023-12-21",
+      "endDate": "2023-12-28",
+      "id": 1
+    }
+  ]
 }

@@ -49,6 +49,7 @@ export default function Admin() {
   return (
     <>
       <form className ='login-form' onSubmit={submitEvent}>
+        <h1 className='login-h1'>Admin log in</h1>
         <input
           type="text"
           name="username"
